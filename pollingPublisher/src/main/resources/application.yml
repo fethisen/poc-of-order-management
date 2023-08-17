@@ -1,0 +1,36 @@
+server:
+  port : 8082
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54321/salesTeam
+    username: postgres
+    password: postgres
+
+#  jpa:
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    generate-ddl: true
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: cqrs
+    password: cqrs
+
+rabbitmq:
+  queue:
+    publisher:
+      name: cqrs_polling_publisher
+    listener:
+      name: cqrs_polling_listener
+  exchange:
+    name: cqrs_polling_publisher_exchange
+  routing:
+    publisher:
+      key: cqrs_polling_routing_key_publisher
+    listener:
+      key: cqrs_polling_routing_key_listener

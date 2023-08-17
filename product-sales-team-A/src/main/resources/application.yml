@@ -1,0 +1,12 @@
+server:
+  port : 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:54321/salesTeam
+    username: postgres
+    password: postgres
+
+#  jpa:
+#    generate-ddl: true
+#    hibernate:
+#      ddl-auto: create

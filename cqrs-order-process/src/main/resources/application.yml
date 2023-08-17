@@ -1,0 +1,31 @@
+server:
+  port : 8083
+
+spring:
+  data:
+    mongodb:
+      username: user
+      password: user
+      host: localhost
+      port: 27018
+      database: dashboard
+      authentication-database: admin
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: cqrs
+    password: cqrs
+
+rabbitmq:
+  queue:
+    publisher:
+      name: cqrs_polling_listener
+    listener:
+      name: cqrs_polling_publisher
+  exchange:
+    name: cqrs_polling_publisher_exchange
+  routing:
+    publisher:
+      key: cqrs_polling_routing_key_listener
+    listener:
+      key: cqrs_polling_routing_key_publisher

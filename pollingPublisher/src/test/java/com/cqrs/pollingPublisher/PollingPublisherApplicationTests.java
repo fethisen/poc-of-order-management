@@ -1,0 +1,13 @@
+package com.cqrs.pollingPublisher;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class PollingPublisherApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
